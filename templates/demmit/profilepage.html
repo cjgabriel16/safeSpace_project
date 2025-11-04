@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}User Profile - SafeSpace{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}"> 
+{% endblock %}
+
+{% block content %}
+<div class="main-content-area">
+    
+    <div class="profile-banner-card" data-user-id="123">
+        <div class="profile-avatar-container">
+            <div class="profile-avatar"></div>
+        </div>
+        <div class="profile-info">
+            <h1 class="profile-name">the archer</h1>
+            <p class="profile-handle">@arc_her</p>
+            <p class="profile-bio">
+                bleeding arrows write their poems
+            </p>
+            <div class="profile-stats">
+                <span><strong>52</strong> Posts</span>
+                <span class="stat-separator">|</span>
+                <span><strong>4.1K</strong> Followers</span>
+                <span class="stat-separator">|</span>
+                <span><strong>287</strong> Following</span>
+            </div>
+            
+            <div class="profile-actions">
+                <button class="btn-action btn-unfollow">Following</button>
+                <button class="btn-action btn-message"><i class="fas fa-envelope"></i> Message</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="profile-content">
+        
+        <div class="about-card content-card">
+            <h3>About</h3>
+            <p>Joined SafeSpace in February 2023. I believe in writing to clarify thought and connect with others. Based in San Francisco, CA.</p>
+        </div>
+
+        <h2 class="page-header content-header">Recent Posts (52)</h2>
+
+        <div class="article-list">
+            
+            <div class="following-item article-card" data-article-id="101">
+                <div class="following-body">
+                    <p class="following-main-text">
+                        <a href="#" class="article-title-link">The Quiet Power of Digital Minimalism</a>
+                    </p>
+                    <p class="following-snippet">
+                        A look into how intentionally reducing digital clutter can lead to a more focused and peaceful life...
+                    </p>
+                    <p class="following-meta">
+                        <span class="post-date">3 days ago</span> | 
+                        <span class="read-time">5 min read</span>
+                    </p>
+                </div>
+                <div class="following-action-area">
+                    <i class="fas fa-heart following-heart active"></i> 
+                    <div class="following-placeholder-img article-thumbnail"></div>
+                </div>
+            </div>
+
+            <div class="following-item article-card" data-article-id="102">
+                <div class="following-body">
+                    <p class="following-main-text">
+                        <a href="#" class="article-title-link">Lessons Learned from Building a Personal Portfolio</a>
+                    </p>
+                    <p class="following-snippet">
+                        From design disasters to deployment success: five key takeaways for new developers...
+                    </p>
+                    <p class="following-meta">
+                        <span class="post-date">1 week ago</span> | 
+                        <span class="read-time">7 min read</span>
+                    </p>
+                </div>
+                <div class="following-action-area">
+                    <i class="fas fa-heart following-heart"></i>
+                    <div class="following-placeholder-img article-thumbnail"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/profile.js' %}"></script>
+{% endblock %}

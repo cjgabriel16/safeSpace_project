@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SafeSpace{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- HEADER -->
+        <header class="app-header">
+            <div class="header-left">
+                <button id="menu-toggle" aria-label="Toggle sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <span class="logo-text">SafeSpace</span>
+            </div>
+
+            <div class="header-center">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="auth-buttons">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="btn-auth logout-btn">Logout</a>
+                    {% else %}
+                    <div class="dropdown">
+                        <button class="btn-auth login-btn">Login <i class="fas fa-caret-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="{% url 'loginpage' %}">Login</a>
+                            <a href="{% url 'registerpage' %}">Register</a>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+
+
+        <!-- SIDEBAR -->
+        <nav class="sidebar">
+            <div class="sidebar-top">
+                <a href="{% url 'homepage' %}"
+                    class="nav-icon {% if request.resolver_match.url_name == 'homepage' %}active{% endif %}">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="{% url 'writepage' %}"
+                    class="nav-icon {% if request.resolver_match.url_name == 'writepage' %}active{% endif %}">
+                    <i class="fas fa-pencil-alt"></i>
+                    <span>Write</span>
+                </a>
+                <a href="{% url 'librarypage' %}"
+                    class="nav-icon {% if request.resolver_match.url_name == 'librarypage' %}active{% endif %}">
+                    <i class="fas fa-book-open"></i>
+                    <span>Library</span>
+                </a>
+                <a href="{% url 'followingpage' %}"
+                    class="nav-icon {% if request.resolver_match.url_name == 'followingpage' %}active{% endif %}">
+                    <i class="fas fa-heart"></i>
+                    <span>Following</span>
+                </a>
+            </div>
+
+            <div class="sidebar-bottom">
+                <!-- Notifications -->
+                <a href="{% url 'notificationpage' %}"
+                    class="sidebar-btn {% if request.resolver_match.url_name == 'notificationpage' %}active{% endif %}">
+                    <i class="fas fa-bell"></i>
+                    <span>Notifications</span>
+                </a>
+
+                <!-- Profile -->
+                <a href="{% url 'profilepage' %}"
+                    class="sidebar-btn {% if request.resolver_match.url_name == 'profilepage' %}active{% endif %}">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Profile</span>
+                </a>
+            </div>
+
+        </nav>
+
+        <!-- CONTENT -->
+        <main class="content-area">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <script src="{% static 'js/layout.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+/* --- General Page Layout (Keep consistent) --- */
+
+/* Blue bar next to the header - Adjust height to match the text line height */
+.page-header {
+    font-size: 28px; 
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-left: 10px;
+    position: relative;
+    color: #333;
+    line-height: 1.2; /* Tighter line height for the header */
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%; /* Making the bar cover the full height of the text */
+    background-color: #007bff;
+    border-radius: 2px;
+}
+
+/* --- Notification List Styling --- */
+.notification-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Reduced gap for a tighter feel */
+}
+
+.notification-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligns content to the top (more flexible layout) */
+    padding: 15px 20px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    /* *** KEY CHANGE 1: Softer Border Radius *** */
+    border-radius: 12px; /* Increased from 8px to 12px for softer edges */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer; /* Implies the whole card is clickable */
+}
+
+.notification-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px); /* More subtle lift */
+}
+
+.notification-item.unread {
+    /* *** KEY CHANGE 2: Subtle Unread Indicator *** */
+    border-left: 5px solid #007bff; 
+    padding-left: 15px; /* Adjust inner padding after adding the border-left */
+    background-color: #f8fcff;
+}
+
+/* --- Notification Body (Text Content) --- */
+.notification-body {
+    flex-grow: 1;
+    margin-right: 20px;
+    font-size: 15px;
+    color: #333;
+    /* Removing the explicit main-text and meta classes for a simpler flow */
+}
+
+.notification-main-text {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    font-size: 16px;
+}
+
+.user-link {
+    font-weight: 700; /* Bolder names stand out more */
+    color: #1a1a1a;
+    text-decoration: none;
+}
+.user-link:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+.notification-time {
+    display: block; /* Ensures time is on its own line, like the reference */
+    font-size: 14px; /* Slightly larger/more readable time stamp */
+    color: #777;
+    margin-top: 5px;
+}
+
+/* --- Notification Action Area (Heart and Placeholder Image) --- */
+.notification-action-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 60px; /* Forces this area to be the height of the image placeholder */
+}
+
+.notification-heart {
+    font-size: 20px; /* Slightly smaller heart */
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.notification-heart:hover {
+    color: #ff6b6b;
+}
+
+.notification-heart.active {
+    color: #dc3545;
+}
+
+.notification-placeholder-img {
+    width: 60px; 
+    height: 60px;
+    background-color: #e0e0e0; 
+    /* *** KEY CHANGE 3: Softer Image Placeholder Edges *** */
+    border-radius: 8px; /* Softer rounded corners for the image box */
+    flex-shrink: 0;
+}

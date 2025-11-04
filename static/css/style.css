@@ -1,0 +1,193 @@
+/* You can customize these variables to match your site's theme */
+:root {
+    --primary-color: #007bff;
+    --light-bg: #f8f9fa;
+    --border-color: #dee2e6;
+    --text-color: #343a40;
+    --secondary-text-color: #6c757d;
+    --white: #fff;
+    --green-btn: #28a745;
+}
+
+/* --- Core Layout: Two-Column Structure --- */
+.main-content-and-sidebar {
+    display: flex; 
+    gap: 2rem; 
+    /* Remove padding if the padding is handled by the base template/container */
+    /* padding: 0 2rem; */
+    width: 100%;
+}
+
+.content-left-container {
+    flex: 3; /* Main content area takes up more space */
+    min-width: 300px;
+}
+
+.sidebar-right {
+    flex: 1; /* Sidebar takes up less space */
+    min-width: 250px;
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    height: fit-content; 
+}
+
+
+/* --- Tabs Styling --- */
+.content-tabs {
+    /* Aligns tabs horizontally */
+    display: flex;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.tab-btn {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.75rem 0;
+    margin-right: 1.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--secondary-text-color);
+    /* The active tab gets the border line, not the container */
+    border-bottom: 3px solid transparent; 
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.tab-btn:hover {
+    color: var(--primary-color);
+}
+
+/* --- Tab Content Switching --- */
+.tab-content {
+    display: none;
+    padding-top: 1rem; /* Space between the tabs and the content */
+}
+
+.tab-content.active {
+    display: block; 
+}
+
+/* --- Section Titles and Articles --- */
+.section-title { 
+    font-size: 1.5rem;
+    margin-top: 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color); /* Separator line for the title */
+    margin-bottom: 1.5rem;
+}
+
+.article-card {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.article-card:last-child {
+    border-bottom: none;
+}
+
+/* ... (Include the rest of your original CSS for thumbnail, article-details, read-now-btn, and featured-list/book-card here) ... */
+
+/* Remaining original CSS kept for completeness: */
+.thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.article-details h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.article-details p {
+    margin: 0 0 0.75rem 0;
+    line-height: 1.5;
+}
+
+.article-details small {
+    color: var(--secondary-text-color);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.read-now-btn {
+    background-color: var(--green-btn);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.read-now-btn:hover {
+    background-color: #218838;
+}
+
+/* Sidebar Styling Snippets (to ensure sidebar elements look correct): */
+.sidebar-right h3 {
+    margin-top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+.sidebar-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-right a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.view-history-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #6c757d;
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+/* "Featured" Section Styles */
+.featured-list {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) var(--light-bg);
+}
+
+.book-card {
+    flex: 0 0 160px;
+    text-align: center;
+}
+
+.book-card img {
+    width: 150px;
+    height: 220px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 0.75rem;
+    object-fit: cover;
+}

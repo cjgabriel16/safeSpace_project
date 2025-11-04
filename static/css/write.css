@@ -1,0 +1,123 @@
+:root {
+            --toolbar-bg: #e8e8e8;
+            --button-color: #555;
+            --publish-bg: #ccc;
+            --title-color: #333;
+            --placeholder-color: #aaa;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: white;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center; /* centers editor horizontally */
+            align-items: flex-start; /* aligns editor to the top */
+            background-color: #f9f9f9;
+        }
+
+        .editor-container {
+            width: 300%;
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* --- Toolbar Styles --- */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: var(--toolbar-bg);
+            border-bottom: 1px solid var(--border-color);
+            flex-shrink: 0; /* Prevents toolbar from shrinking */
+        }
+
+        .tool-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .tool-button {
+            /* Using Arial Black and common font symbols to simulate the icons */
+            font-family: 'Arial Black', sans-serif;
+            font-size: 18px;
+            color: var(--button-color);
+            cursor: pointer;
+            padding: 2px 4px;
+            /* Hide the actual text-decoration underline, but make the 'U' look like a button */
+            text-decoration: none; 
+        }
+
+        .tool-button.active {
+            font-weight: bold;
+            color: var(--title-color); /* Darker color for active/selected tools */
+        }
+        
+        /* Custom styles for specific tools to better match the image */
+        .tool-button.bold { font-weight: 900; }
+        .tool-button.italic { font-style: italic; }
+        .tool-button.underline { text-decoration: underline; }
+        .tool-button.quote { font-size: 20px; }
+
+        .publish-button {
+            padding: 8px 18px;
+            background-color: var(--publish-bg);
+            color: var(--title-color);
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 3px;
+        }
+
+        /* --- Content Area Styles --- */
+        .content-area {
+            padding: 40px 60px;
+            flex-grow: 1; /* Allows content area to take up remaining vertical space */
+            overflow-y: auto; /* Allows content to scroll if it gets too long */
+        }
+
+        .title-input {
+            border: none;
+            width: 100%;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--title-color);
+            margin-bottom: 10px;
+            padding: 0;
+            resize: none; /* Disable manual resizing for textareas */
+            overflow: hidden; /* Hide scrollbar for title */
+        }
+
+        /* Placeholder style for the title and content */
+        .title-input::placeholder {
+            color: var(--title-color);
+            opacity: 1; /* For cross-browser consistency */
+        }
+
+        .content-placeholder {
+            border: none;
+            width: 100%;
+            font-size: 1.2em;
+            color: var(--placeholder-color);
+            min-height: 400px; /* Min height for the main content block */
+            padding: 0;
+            resize: none;
+        }
+
+        .content-placeholder::placeholder {
+            color: var(--placeholder-color);
+            opacity: 1;
+        }

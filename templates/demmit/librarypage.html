@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}My Library - SafeSpace{% endblock %}
+
+{% block content %}
+<div class="main-content-wrapper">
+
+    <!-- Header -->
+    <header class="header">
+        <h1>My Library</h1>
+    </header>
+
+    <!-- Tabs -->
+    <nav class="tab-controls">
+        <button class="tab-button active" data-tab="my-articles">My Articles</button>
+        <button class="tab-button" data-tab="reading-history">Reading History</button>
+    </nav>
+
+    <!-- Library Content -->
+    <section class="library-grid">
+        
+        <!-- My Articles Tab -->
+        <div class="tab-content active" id="my-articles">
+            <h2 class="section-heading">Saved & Created Articles</h2>
+
+            <article class="article-card">
+                <img src="{% static 'img/1.png' %}" alt="Article Thumbnail" class="article-thumbnail">
+                <div class="article-details">
+                    <p class="article-title">Mental Health First Steps: A Guide</p>
+                    <p class="article-summary">
+                        This article covers introductory techniques for managing daily stress and anxiety, focusing on mindfulness.
+                    </p>
+                    <p class="article-meta">Author: Jane Doe | Saved: 2 weeks ago</p>
+                    <button class="read-button">Read Now</button>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <img src="{% static 'img/2.png' %}" alt="Article Thumbnail" class="article-thumbnail">
+                <div class="article-details">
+                    <p class="article-title">Understanding Cognitive Behavioral Therapy (CBT)</p>
+                    <p class="article-summary">
+                        A deep dive into the principles and application of CBT for common challenges.
+                    </p>
+                    <p class="article-meta">Author: Community Contributor | Saved: 4 days ago</p>
+                    <button class="read-button">Read Now</button>
+                </div>
+            </article>
+        </div>
+
+        <!-- Reading History Tab -->
+        <div class="tab-content" id="reading-history">
+            <h2 class="section-heading">Full Reading History</h2>
+            <p>Your complete list of previously read articles goes here.</p>
+        </div>
+
+    </section>
+</div>
+
+<!-- Links -->
+<link rel="stylesheet" href="{% static 'css/library.css' %}">
+<script src="{% static 'js/library.js' %}"></script>
+{% endblock %}

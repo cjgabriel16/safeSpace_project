@@ -1,0 +1,132 @@
+/* --- Shared Styling for Following and Notification Pages --- */
+
+/* --- General Page Header (Matches Notification Header) --- */
+.page-header {
+    font-size: 28px; 
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-left: 10px;
+    position: relative;
+    color: #333;
+    line-height: 1.2;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #007bff;
+    border-radius: 2px;
+}
+
+/* --- Following List Styling (Card Layout) --- */
+.following-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.following-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px 20px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    /* Soft Edges */
+    border-radius: 12px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.following-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+/* No blue border for follower items unless they are "new" or a special status */
+/* If you want to highlight certain followed users, you could add:
+.following-item.featured {
+    border-left: 5px solid #4CAF50; 
+    padding-left: 15px; 
+}
+*/
+
+/* --- Following Body (Text Content) --- */
+.following-body {
+    flex-grow: 1;
+    margin-right: 20px;
+    color: #333;
+}
+
+.following-main-text {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.user-link {
+    color: #1a1a1a;
+    text-decoration: none;
+}
+.user-link:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+.following-snippet {
+    font-size: 14px;
+    color: #555;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+}
+
+.following-meta {
+    font-size: 13px; 
+    color: #777;
+    margin-top: 5px;
+}
+
+.join-date, .follower-count {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* --- Action Area (Heart and Placeholder Image) --- */
+.following-action-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 60px;
+}
+
+.following-heart {
+    font-size: 20px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.following-heart:hover {
+    color: #ff6b6b;
+}
+
+.following-heart.active {
+    color: #dc3545;
+}
+
+.following-placeholder-img {
+    width: 60px; 
+    height: 60px;
+    background-color: #e0e0e0; 
+    border-radius: 8px; 
+    flex-shrink: 0;
+}

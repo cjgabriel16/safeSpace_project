@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Log In — SafeSpace{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+  <div class="auth-card">
+
+    <img src="{% static 'img/logo.png' %}" alt="SafeSpace Logo" class="logo">
+
+    <h1 class="auth-title">SafeSpace</h1>
+    <p class="auth-subtitle">Haven of Thoughts</p>
+
+    <form class="auth-form">
+      <div class="form-group">
+        <input type="text" id="id_username" name="username" placeholder="Enter your username or email" required>
+      </div>
+
+      <div class="form-group">
+        <input type="password" id="id_password" name="password" placeholder="Enter your password" required>
+      </div>
+
+      <div class="form-options">
+        <label class="remember-me">
+          <input type="checkbox" id="remember">
+          <span>Remember Me</span>
+        </label>
+        <a href="#" class="forgot-password">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="auth-btn">Log In</button>
+    </form>
+
+    <div class="auth-footer">
+      Don't have an account? 
+      <a href="{% url 'registerpage' %}" class="auth-link">Sign Up</a>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/login.js' %}"></script>
+{% endblock %}

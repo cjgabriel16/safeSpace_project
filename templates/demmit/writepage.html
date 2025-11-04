@@ -1,0 +1,38 @@
+<!-- This template inherits from base.html -->
+{% extends 'base.html' %}
+
+{% load static %}
+
+<!-- This sets the title for this specific page -->
+{% block title %}Write - SafeSpace{% endblock %}
+
+{%block content %}
+
+    <div class="editor-container">
+        
+        <div class="toolbar">
+            <div class="tool-group">
+                <span class="tool-button bold active">B</span>
+                <span class="tool-button italic">i</span>
+                <span class="tool-button underline">U</span>
+                
+                <span style="border-left: 1px solid var(--border-color); height: 20px; margin: 0 5px;"></span>
+
+                <span class="tool-button">&#9998;</span> <span class="tool-button">&#8801;</span> <span class="tool-button">&#x2752;</span> <span class="tool-button quote">&#x201C;</span> </div>
+            
+            <button class="publish-button">Publish</button>
+        </div>
+
+        <div class="content-area">
+            <textarea class="title-input" placeholder="Title" rows="1"></textarea>
+            
+            <textarea class="content-placeholder" placeholder="Write something..."></textarea>
+        </div>
+
+        <div style="text-align: center; padding: 10px; color: var(--placeholder-color); flex-shrink: 0;">
+            &darr;
+        </div>
+
+    </div>
+    <link rel="stylesheet" href="{% static 'css/write.css' %}">
+{% endblock %}

@@ -1,0 +1,41 @@
+/* --- Register Form Specific Styles (Append to main.css) --- */
+
+/* Adjust size for the Register card if needed for taller content */
+.login-card.register-card {
+    max-width: 480px; /* Slightly wider to give more room for the form fields */
+    padding: 35px 50px; /* Adjusted padding */
+}
+
+/* Adjust the register button to use the new class name */
+.register-btn {
+    /* No changes needed, inherits styles from .login-btn */
+}
+
+/* Style for the Terms and Agreement checkbox area */
+.terms-agreement {
+    justify-content: flex-start; /* Align checkbox to the left */
+    margin-bottom: 25px;
+}
+
+.terms-check {
+    display: flex;
+    align-items: flex-start;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.terms-check input[type="checkbox"] {
+    margin-right: 8px;
+    margin-top: 2px; /* Align the checkbox better with text */
+    /* Add custom styling for the checkbox if desired */
+}
+
+.terms-agreement a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.terms-agreement a:hover {
+    color: var(--secondary-color);
+}

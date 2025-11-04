@@ -1,0 +1,253 @@
+/* ======================================================= */
+/* 1. SHARED CONSISTENCY STYLES (Header, Card Layout)      */
+/* These styles ensure the profile is consistent with   */
+/* the Notifications and Following pages.               */
+/* ======================================================= */
+
+.main-content-area {
+    padding: 20px;
+    background-color: #f0f2f5; 
+    /* Ensures the area behind the cards is the light grey */
+}
+
+/* Page Header Style (Blue Bar) */
+.page-header {
+    font-size: 28px; 
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-left: 10px;
+    position: relative;
+    color: #333;
+    line-height: 1.2;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #007bff;
+    border-radius: 2px;
+}
+
+/* Consistent Card Container Styles */
+.article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Consistent Card Item Styles (Used here as .following-item or .article-card) */
+.following-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px 20px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px; /* Soft Edges */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.following-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Consistent Card Body Styles */
+.following-body {
+    flex-grow: 1;
+    margin-right: 20px;
+    color: #333;
+}
+
+.following-main-text {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.following-snippet {
+    font-size: 14px;
+    color: #555;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+}
+
+.following-meta {
+    font-size: 13px; 
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Consistent Action Area Styles (Heart/Image) */
+.following-action-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 60px;
+}
+
+.following-heart {
+    font-size: 20px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.following-heart:hover,
+.following-heart.active {
+    color: #dc3545;
+}
+
+.following-placeholder-img {
+    width: 60px; 
+    height: 60px;
+    background-color: #e0e0e0; 
+    border-radius: 8px; 
+    flex-shrink: 0;
+}
+
+
+/* ======================================================= */
+/* 2. PROFILE PAGE SPECIFIC STYLES                         */
+/* ======================================================= */
+
+.profile-content {
+    margin-top: 30px;
+}
+
+/* --- Profile Banner Card --- */
+.profile-banner-card {
+    display: flex;
+    align-items: flex-start;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.profile-avatar-container {
+    margin-right: 30px;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; 
+    background-color: #007bff; 
+    border: 3px solid #f0f2f5;
+    flex-shrink: 0;
+}
+
+.profile-info {
+    flex-grow: 1;
+}
+
+.profile-name {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    color: #1a1a1a;
+}
+
+.profile-handle {
+    font-size: 16px;
+    color: #007bff;
+    margin: 0 0 10px 0;
+    font-weight: 500;
+}
+
+.profile-bio {
+    font-size: 14px;
+    color: #555;
+    margin: 0 0 15px 0;
+    line-height: 1.5;
+}
+
+.profile-stats {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.stat-separator {
+    margin: 0 8px;
+    color: #ccc;
+}
+
+/* Profile Actions (Buttons) */
+.btn-action {
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-unfollow {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+
+.btn-unfollow:hover {
+    background-color: #0056b3;
+}
+
+.btn-message {
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.btn-message:hover {
+    background-color: #f0f7ff;
+}
+
+/* About Card and Article Styling */
+.about-card {
+    margin-bottom: 25px;
+    padding: 20px; /* Pad inside the card */
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px; /* Consistent card rounding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.about-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.content-header {
+    margin-top: 35px; 
+    margin-bottom: 20px;
+}
+
+.article-title-link {
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.article-title-link:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+.article-thumbnail {
+    border-radius: 4px; 
+}

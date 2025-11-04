@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - SafeSpace{% endblock %}
+
+{% block content %}
+<div class="main-content-and-sidebar">
+    
+    <div class="content-left-container">
+        
+        <nav class="content-tabs">
+            <button id="for-you-btn" class="tab-btn active">For You</button>
+            <button id="featured-btn" class="tab-btn">Featured</button>
+        </nav>
+        
+        <main>
+            <div id="for-you-content" class="tab-content active">
+                <h2 class="section-title">Saved & Created Articles</h2>
+                
+                <div class="article-card">
+                    <img src="{% static 'img/1.png' %}" alt="Article Thumbnail" class="thumbnail">
+                    <div class="article-details">
+                        <h3>Mental Health First Steps: A Guide</h3>
+                        <p>This article covers introductory techniques for managing daily stress and anxiety, focusing on mindfulness.</p>
+                        <small>Author: Jane Doe | Saved: 2 weeks ago</small>
+                        <button class="read-now-btn">Read Now</button>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <img src="{% static 'img/2.png' %}" alt="Article Thumbnail" class="thumbnail">
+                    <div class="article-details">
+                        <h3>Understanding Cognitive Behavioral Therapy (CBT)</h3>
+                        <p>A deep dive into the principles and application of CBT for common challenges.</p>
+                        <small>Author: Community Contributor | Saved: 4 days ago</small>
+                        <button class="read-now-btn">Read Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="featured-content" class="tab-content">
+                <h2 class="section-title">Featured Books</h2>
+                <div class="featured-list">
+                    <div class="book-card">
+                        <img src="{% static 'img/3.png' %}" alt="Book Cover">
+                        <h4>The Mindful Path</h4>
+                        <p>John Kabat-Zinn</p>
+                    </div>
+                    <div class="book-card">
+                        <img src="{% static 'img/4.png' %}" alt="Book Cover">
+                        <h4>Atomic Habits</h4>
+                        <p>James Clear</p>
+                    </div>
+                    <div class="book-card">
+                        <img src="{% static 'img/5.png' %}" alt="Book Cover">
+                        <h4>Daring Greatly</h4>
+                        <p>Brené Brown</p>
+                    </div>
+                    <div class="book-card">
+                        <img src="{% static 'img/6.png' %}" alt="Book Cover">
+                        <h4>Thinking, Fast and Slow</h4>
+                        <p>Daniel Kahneman</p>
+                    </div>
+                    <div class="book-card">
+                        <img src="{% static 'img/7.png' %}" alt="Book Cover">
+                        <h4>Grit</h4>
+                        <p>Angela Duckworth</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <aside class="sidebar-right">
+        <h3>Recently Read (History Snippets)</h3>
+        <ul>
+            <li><a href="#">The Benefits of Journaling</a></li>
+            <li><a href="#">Building a Better Sleep Routine</a></li>
+            <li><a href="#">Coping with Social Isolation</a></li>
+            <li><a href="#">How to Practice Gratitude</a></li>
+        </ul>
+        <button class="view-history-btn">View Full History</button>
+    </aside>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const forYouBtn = document.getElementById('for-you-btn');
+        const featuredBtn = document.getElementById('featured-btn');
+        const forYouContent = document.getElementById('for-you-content');
+        const featuredContent = document.getElementById('featured-content');
+
+        if (forYouBtn && featuredBtn && forYouContent && featuredContent) {
+            
+            function switchTab(activeBtn, inactiveBtn, activeContent, inactiveContent) {
+                activeBtn.classList.add('active');
+                inactiveBtn.classList.remove('active');
+
+                activeContent.classList.add('active');
+                inactiveContent.classList.remove('active');
+            }
+
+            forYouBtn.addEventListener('click', () => {
+                switchTab(forYouBtn, featuredBtn, forYouContent, featuredContent);
+            });
+
+            featuredBtn.addEventListener('click', () => {
+                switchTab(featuredBtn, forYouBtn, featuredContent, forYouContent);
+            });
+        }
+    });
+</script>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
