@@ -1,146 +1,44 @@
-/* Theme variables aligned to site (blue) */
+/* Theme variables aligned to main theme */
 :root {
-    --primary-color: #007bff;
-    --primary-dark: #0056b3;
-    --on-primary-color: #ffffff;
-    --text-color: #1f2d3d;
-    --muted-color: #6c757d;
-    --muted-alt: #555d66;
+    --primary-color: #2cb8ff;
+    --secondary-color: #41e0b5;
+    --accent-color: #00c3ff;
+    --bg-color: #f9fafc;
+    --text-color: #333;
     --card-bg: #ffffff;
-    --card-border: #e6f0ff;
-    --placeholder-bg: #e9f5ff;
-    --muted-light: #cedff9;
+    --card-border: #d8f4ff;
+    --muted-color: #6c757d;
 }
 
-/* --- Shared Styling for Following and Notification Pages --- */
-
-/* --- General Page Header (Matches Notification Header) --- */
-.page-header {
-    font-size: 28px; 
-    font-weight: 700;
-    margin-bottom: 25px;
-    padding-left: 10px;
-    position: relative;
-    color: var(--text-color);
-    line-height: 1.2;
-}
-
-.page-header::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 100%;
-    background-color: var(--primary-color);
-    border-radius: 2px;
-}
-
-/* --- Following List Styling (Card Layout) --- */
-.following-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.following-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 15px 20px;
-    background-color: var(--card-bg);
-    border: 1px solid var(--card-border);
-    /* Soft Edges */
-    border-radius: 12px; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-}
-
-.following-item:hover {
-    box-shadow: 0 6px 18px rgba(2, 75, 170, 0.08);
-    transform: translateY(-1px);
-}
-
-/* No blue border for follower items unless they are "new" or a special status */
-/* If you want to highlight certain followed users, you could add:
-.following-item.featured {
-    border-left: 5px solid var(--primary-color); 
-    padding-left: 15px; 
-}
-*/
-
-/* --- Following Body (Text Content) --- */
-.following-body {
-    flex-grow: 1;
-    margin-right: 20px;
-    color: var(--text-color);
-}
-
-.following-main-text {
-    margin: 0;
-    padding: 0;
-    line-height: 1.4;
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.user-link {
-    color: var(--text-color);
-    text-decoration: none;
-}
-.user-link:hover {
-    text-decoration: underline;
-    color: var(--primary-color);
-}
-
-.following-snippet {
-    font-size: 14px;
-    color: var(--muted-alt);
-    margin: 0 0 8px 0;
-    line-height: 1.4;
-}
-
-.following-meta {
-    font-size: 13px; 
-    color: var(--muted-color);
-    margin-top: 5px;
-}
-
-.join-date, .follower-count {
-    display: inline-block;
-    margin-right: 5px;
-}
-
-/* --- Action Area (Heart and Placeholder Image) --- */
-.following-action-area {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    height: 60px;
-}
-
+/* Update heart colors */
 .following-heart {
     font-size: 20px;
-    color: var(--muted-light);
+    color: #ffcdd2;
     cursor: pointer;
     transition: color 0.2s ease-in-out;
 }
 
 .following-heart:hover {
-    color: var(--primary-color);
+    color: #ff4444;
 }
 
 .following-heart.active {
-    color: var(--primary-dark);
+    color: #ff0000;
 }
 
-.following-placeholder-img {
-    width: 60px; 
-    height: 60px;
-    background-color: var(--placeholder-bg); 
-    border-radius: 8px; 
-    flex-shrink: 0;
+.page-header::before {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.following-item {
+    background: linear-gradient(90deg, #ffffff 0%, #eafaff 50%, #f5fffc 100%);
+    border: 1px solid var(--card-border);
+}
+
+.following-item:hover {
+    box-shadow: 0 6px 18px rgba(44, 184, 255, 0.1);
+}
+
+.user-link:hover {
+    color: var(--primary-color);
 }

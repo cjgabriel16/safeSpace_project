@@ -16,9 +16,8 @@ body {
     font-size: 2.4rem;
     font-weight: 700;
     margin-bottom: 20px;
-    background: linear-gradient(90deg, #007bff, #0056b3, #003d80);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
-    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -58,7 +57,7 @@ body {
     bottom: -2px;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, #007bff, #0056b3, #003d80);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     border-radius: 3px;
 }
 
@@ -89,12 +88,12 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    background: #ffffff;
+    background: linear-gradient(90deg, #ffffff 0%, #eafaff 50%, #f5fffc 100%);
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0,123,255,0.05);
     padding: 20px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid #e6f0ff;
+    border: 1px solid #d8f4ff;
 }
 
 .article-card:hover {
@@ -141,7 +140,7 @@ body {
 .read-button {
     margin-top: 10px;
     align-self: flex-start;
-    background: linear-gradient(90deg, #007bff, #0056b3, #003d80);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     border: none;
     color: white;
     font-weight: 600;

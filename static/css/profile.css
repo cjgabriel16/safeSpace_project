@@ -178,6 +178,7 @@
     font-size: 14px;
     color: #777;
     margin-bottom: 20px;
+    border-color: #d8f4ff;
 }
 
 .stat-separator {
@@ -250,4 +251,12 @@
 
 .article-thumbnail {
     border-radius: 4px; 
+}
+
+.profile-header {
+    background: linear-gradient(90deg, #ffffff 0%, #eafaff 50%, #f5fffc 100%);
+}
+
+.profile-action-button {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
 }

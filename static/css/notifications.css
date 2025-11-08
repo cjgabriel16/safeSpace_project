@@ -1,3 +1,13 @@
+/* Theme variables from main.css */
+:root {
+    --primary-color: #2cb8ff;
+    --secondary-color: #41e0b5;
+    --accent-color: #00c3ff;
+    --bg-color: #f9fafc;
+    --text-color: #333;
+    --card-border: #d8f4ff;
+}
+
 /* --- General Page Layout (Keep consistent) --- */
 
 /* Blue bar next to the header - Adjust height to match the text line height */
@@ -7,7 +17,7 @@
     margin-bottom: 25px;
     padding-left: 10px;
     position: relative;
-    color: #333;
+    color: var(--text-color);
     line-height: 1.2; /* Tighter line height for the header */
 }
 
@@ -19,7 +29,7 @@
     transform: translateY(-50%);
     width: 4px;
     height: 100%; /* Making the bar cover the full height of the text */
-    background-color: #007bff;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
     border-radius: 2px;
 }
 
@@ -35,25 +45,24 @@
     justify-content: space-between;
     align-items: flex-start; /* Aligns content to the top (more flexible layout) */
     padding: 15px 20px;
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    /* *** KEY CHANGE 1: Softer Border Radius *** */
+    background: linear-gradient(90deg, #ffffff 0%, #eafaff 50%, #f5fffc 100%);
+    border: 1px solid var(--card-border);
     border-radius: 12px; /* Increased from 8px to 12px for softer edges */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 5px rgba(44, 184, 255, 0.05);
     transition: all 0.2s ease-in-out;
     cursor: pointer; /* Implies the whole card is clickable */
 }
 
 .notification-item:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(44, 184, 255, 0.1);
     transform: translateY(-1px); /* More subtle lift */
 }
 
 .notification-item.unread {
     /* *** KEY CHANGE 2: Subtle Unread Indicator *** */
-    border-left: 5px solid #007bff; 
+    border-left: 5px solid var(--primary-color); 
     padding-left: 15px; /* Adjust inner padding after adding the border-left */
-    background-color: #f8fcff;
+    background: linear-gradient(90deg, #f8fcff 0%, #eafaff 50%, #f5fffc 100%);
 }
 
 /* --- Notification Body (Text Content) --- */
@@ -61,7 +70,7 @@
     flex-grow: 1;
     margin-right: 20px;
     font-size: 15px;
-    color: #333;
+    color: var(--text-color);
     /* Removing the explicit main-text and meta classes for a simpler flow */
 }
 
@@ -74,12 +83,13 @@
 
 .user-link {
     font-weight: 700; /* Bolder names stand out more */
-    color: #1a1a1a;
+    color: var(--text-color);
     text-decoration: none;
 }
+
 .user-link:hover {
     text-decoration: underline;
-    color: #007bff;
+    color: var(--primary-color);
 }
 
 .notification-time {
@@ -99,24 +109,23 @@
 
 .notification-heart {
     font-size: 20px; /* Slightly smaller heart */
-    color: #ccc;
+    color: #ffcdd2;
     cursor: pointer;
     transition: color 0.2s ease-in-out;
 }
 
 .notification-heart:hover {
-    color: #ff6b6b;
+    color: #ff4444;
 }
 
 .notification-heart.active {
-    color: #dc3545;
+    color: #ff0000;
 }
 
 .notification-placeholder-img {
     width: 60px; 
     height: 60px;
-    background-color: #e0e0e0; 
-    /* *** KEY CHANGE 3: Softer Image Placeholder Edges *** */
+    background-color: #eafaff;
     border-radius: 8px; /* Softer rounded corners for the image box */
     flex-shrink: 0;
 }
