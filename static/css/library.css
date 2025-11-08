@@ -1,6 +1,6 @@
 /* ---------- Overall Layout ---------- */
 body {
-    background-color: #ffffff;
+    background-color: #f5f7fb;
 }
 
 .main-content-wrapper {
@@ -8,7 +8,7 @@ body {
     margin: 60px auto;
     padding: 20px;
     font-family: 'Inter', 'Segoe UI', sans-serif;
-    color: #222;
+    color: #1f2d3d;
 }
 
 /* ---------- Header ---------- */
@@ -16,8 +16,9 @@ body {
     font-size: 2.4rem;
     font-weight: 700;
     margin-bottom: 20px;
-    background: linear-gradient(90deg, #ff7a7a, #ffb347, #a1c4fd);
+    background: linear-gradient(90deg, #007bff, #0056b3, #003d80);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -25,7 +26,7 @@ body {
 .tab-controls {
     display: flex;
     gap: 25px;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid #e6f0ff;
     margin-bottom: 30px;
     position: relative;
 }
@@ -36,18 +37,18 @@ body {
     font-size: 1rem;
     font-weight: 500;
     padding: 10px 0;
-    color: #666;
+    color: #6c757d;
     cursor: pointer;
     position: relative;
     transition: color 0.3s ease;
 }
 
 .tab-button:hover {
-    color: #222;
+    color: #007bff;
 }
 
 .tab-button.active {
-    color: #111;
+    color: #0056b3;
 }
 
 .tab-button.active::after {
@@ -57,7 +58,7 @@ body {
     bottom: -2px;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, #ff7a7a, #ffb347, #a1c4fd);
+    background: linear-gradient(90deg, #007bff, #0056b3, #003d80);
     border-radius: 3px;
 }
 
@@ -88,17 +89,17 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    background: #fff;
+    background: #ffffff;
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px rgba(0,123,255,0.05);
     padding: 20px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid #f1f1f1;
+    border: 1px solid #e6f0ff;
 }
 
 .article-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 25px rgba(0,123,255,0.08);
 }
 
 /* Image thumbnail */
@@ -122,25 +123,25 @@ body {
 .article-title {
     font-weight: 600;
     font-size: 1.2rem;
-    color: #111;
+    color: #1f2d3d;
 }
 
 .article-summary {
-    color: #555;
+    color: #555d66;
     font-size: 0.95rem;
     line-height: 1.5;
 }
 
 .article-meta {
     font-size: 0.85rem;
-    color: #888;
+    color: #6c757d;
 }
 
 /* ---------- Read Button ---------- */
 .read-button {
     margin-top: 10px;
     align-self: flex-start;
-    background: linear-gradient(90deg, #ff7a7a, #ffb347, #a1c4fd);
+    background: linear-gradient(90deg, #007bff, #0056b3, #003d80);
     border: none;
     color: white;
     font-weight: 600;
