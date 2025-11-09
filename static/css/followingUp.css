@@ -1,0 +1,132 @@
+/* Theme variables from main.css */
+:root {
+    /* Palette aligned with library.css */
+    --primary-color: #007bff;   /* library uses blue (#007bff) for primary accents */
+    --secondary-color: #41e0b5; /* keep the green-teal secondary */
+    --accent-color: #00c3ff;
+    --bg-color: #f5f7fb;        /* body background in library.css */
+    --text-color: #1f2d3d;      /* main text color from library.css */
+    --card-border: #d8f4ff;     /* card border used in library.css */
+}
+
+/* --- General Page Layout (Keep consistent) --- */
+
+/* Blue bar next to the header - Adjust height to match the text line height */
+.page-header {
+    font-size: 28px; 
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-left: 10px;
+    position: relative;
+    color: var(--text-color);
+    line-height: 1.2; /* Tighter line height for the header */
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%; /* Making the bar cover the full height of the text */
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+/* --- Notification List Styling --- */
+.notification-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Reduced gap for a tighter feel */
+}
+
+.notification-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligns content to the top (more flexible layout) */
+    padding: 15px 20px;
+    background: linear-gradient(90deg, #ffffff 0%, #eafaff 50%, #f5fffc 100%);
+    border: 1px solid var(--card-border);
+    border-radius: 12px; /* Increased from 8px to 12px for softer edges */
+    box-shadow: 0 2px 5px rgba(0,123,255,0.05); /* aligned with library.css shadow tint */
+    transition: all 0.2s ease-in-out;
+    cursor: pointer; /* Implies the whole card is clickable */
+}
+
+.notification-item:hover {
+    box-shadow: 0 6px 25px rgba(0,123,255,0.08); /* match hover intensity from library cards */
+    transform: translateY(-3px); /* align lift with library card hover */
+}
+
+.notification-item.unread {
+    /* *** KEY CHANGE 2: Subtle Unread Indicator *** */
+    border-left: 5px solid var(--primary-color); 
+    padding-left: 15px; /* Adjust inner padding after adding the border-left */
+    background: linear-gradient(90deg, #f8fcff 0%, #eafaff 50%, #f5fffc 100%);
+}
+
+/* --- Notification Body (Text Content) --- */
+.notification-body {
+    flex-grow: 1;
+    margin-right: 20px;
+    font-size: 15px;
+    color: var(--text-color);
+    /* Removing the explicit main-text and meta classes for a simpler flow */
+}
+
+.notification-main-text {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    font-size: 16px;
+}
+
+.user-link {
+    font-weight: 700; /* Bolder names stand out more */
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.user-link:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+.notification-time {
+    display: block; /* Ensures time is on its own line, like the reference */
+    font-size: 14px; /* Slightly larger/more readable time stamp */
+    color: #777;
+    margin-top: 5px;
+}
+
+/* --- Notification Action Area (Heart and Placeholder Image) --- */
+.notification-action-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 60px; /* Forces this area to be the height of the image placeholder */
+}
+
+.notification-heart {
+    font-size: 20px; /* Slightly smaller heart */
+    color: #ffcdd2;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.notification-heart:hover {
+    color: #ff4444;
+}
+
+.notification-heart.active {
+    color: var(--primary-color); /* use primary accent for active state to match library style */
+}
+
+.notification-placeholder-img {
+    width: 60px; 
+    height: 60px;
+    background-color: #eafaff;
+    border-radius: 8px; /* Softer rounded corners for the image box */
+    flex-shrink: 0;
+}
